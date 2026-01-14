@@ -1,2 +1,64 @@
-# C-_AI_Practice
-练习
+#顺序·分支·循环结构
+
+##题单一：顺序结构
+
+###1.小写字母转化为大写字母
+'''cpp
+#include<iostream>
+using namespace std;
+int main(){
+    char c;
+    cin>>c;
+    cout<<char(c-32);
+    return 0;
+}
+
+
+###2.浮点数反转
+'''cpp
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <algorithm>
+using namespace std;
+int main() {
+    double num;
+    cin >> num;
+    int integer_part = static_cast<int>(num);
+    double decimal_part = num - integer_part;
+    bool is_one_decimal = (fabs(decimal_part * 10 - round(decimal_part * 10)) < 1e-6) && (decimal_part != 0);
+    if (integer_part <= 100 || integer_part >= 1000 || !is_one_decimal) {
+        cout << "请输入大于100且小于1000的一位小数的浮点数" << endl;
+        return 0;
+    }
+    int dec = static_cast<int>(round(decimal_part * 10));
+    string int_str = to_string(integer_part);
+    reverse(int_str.begin(), int_str.end());
+    cout << dec << "." << int_str << endl;
+    return 0;
+}
+
+
+###3.上学迟到
+'''cpp
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+int main() {
+    int s, v;
+    cin >> s >> v;
+    int t_walk = (s + v - 1) / v;  
+    int total_time = t_walk + 10;
+    int school_time = 8 * 60;
+    int start_time = school_time - total_time;
+    if (start_time < 0) {
+        start_time += 24 * 60;  
+    }
+    int hour = start_time / 60;
+    int minute = start_time % 60;
+    cout << setw(2) << setfill('0') << hour << ":"
+         << setw(2) << setfill('0') << minute << endl;
+    return 0;
+}
+
