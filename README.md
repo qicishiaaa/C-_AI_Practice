@@ -3,7 +3,7 @@
 ##题单一：顺序结构
 
 ###1.小写字母转化为大写字母
-'''cpp
+```cpp
 #include<iostream>
 using namespace std;
 int main(){
@@ -15,7 +15,7 @@ int main(){
 
 
 ###2.浮点数反转
-'''cpp
+```cpp
 #include <iostream>
 #include <string>
 #include <cmath>
@@ -40,7 +40,7 @@ int main() {
 
 
 ###3.上学迟到
-'''cpp
+```cpp
 #include <iostream>
 #include <cmath>
 #include <iomanip>
